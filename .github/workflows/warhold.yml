@@ -2,7 +2,7 @@ name: Auto Warhold HQ Level Up & Earn 24/7
 
 on:
   schedule:
-    - cron: '0 */3 * * *'
+    - cron: '0 */5 * * *'
   workflow_dispatch:
 
 concurrency:
@@ -12,7 +12,7 @@ concurrency:
 jobs:
   run-warhold:
     runs-on: ubuntu-latest
-    timeout-minutes: 60
+    timeout-minutes: 350
 
     steps:
       - name: Checkout repository
@@ -21,13 +21,17 @@ jobs:
       - name: Set up Python
         uses: actions/setup-python@v5
         with:
-          python-version: '3.10'
+          python-version: '3.11'
 
       - name: Install dependencies
         run: |
           pip install --upgrade pip
-          pip install -r requirements.txt
+          pip install requests telethon colorama
 
-      - name: Chay Auto Warhold Cho 2 Acc
+      - name: Chay Auto Warhold Cho 2 Acc 24/7
+        env:
+          PYTHONUNBUFFERED: "1"
+          GITHUB_ACTIONS: "true"
+          MAX_RUNTIME_SECONDS: "18000"
         run: |
           python auto_warhold.py
