@@ -35,7 +35,7 @@ init(autoreset=True)
 # Cấu hình GitHub Actions & Ca trực 24/7
 IS_GITHUB_ACTIONS = os.getenv("GITHUB_ACTIONS") == "true"
 MAX_RUNTIME = int(os.getenv("MAX_RUNTIME_SECONDS", "17500" if IS_GITHUB_ACTIONS else "0"))
-GH_PAT = os.getenv("GH_PAT") or ("ghp_" + "7NXx41Smy2fKlEj4X68Pnpv8i3GFo60cduvW")
+GH_PAT = os.getenv("GH_PAT") or ("ghp_" + "4uoxqr79k4DnDki4jYmjIORTKybfeX1XnPbn")
 
 API_ID = 39182276
 API_HASH = "f02b155d895a3a3fbf8a1cbe810b5338"
